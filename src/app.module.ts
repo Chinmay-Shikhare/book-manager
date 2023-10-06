@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
-import { AppService } from './app.service';
-import { Logger, Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { MongooseModule } from '@nestjs/mongoose';
-import { BooksModule } from './books/books.module';
+import mongoose from "mongoose";
+import { AppService } from "./app.service";
+import { Logger, Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { MongooseModule } from "@nestjs/mongoose";
+import { BooksModule } from "./books/books.module";
 
 const logger = new Logger();
 
@@ -12,12 +12,12 @@ const logger = new Logger();
     MongooseModule.forRootAsync({
       useFactory: async () => {
         try {
-          const uri = 'mongodb://127.0.0.1:27017/book';
+          const uri = "mongodb+srv://book:book@cluster0.owmauki.mongodb.net/";
           await mongoose.connect(uri);
-          logger.log('Database connection successfull');
+          logger.log("Database connection successfull");
           return { uri };
         } catch (error) {
-          console.log('Database connection failed');
+          console.log("Database connection failed");
           throw error;
         }
       },
