@@ -22,7 +22,7 @@ AppModule = __decorate([
             mongoose_2.MongooseModule.forRootAsync({
                 useFactory: async () => {
                     try {
-                        const uri = "mongodb+srv://book:book@cluster0.owmauki.mongodb.net/";
+                        const uri = "mongodb+srv://book:book@cluster0.s4n827j.mongodb.net/";
                         await mongoose_1.default.connect(uri);
                         logger.log("Database connection successfull");
                         return { uri };

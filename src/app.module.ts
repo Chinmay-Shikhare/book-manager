@@ -12,7 +12,7 @@ const logger = new Logger();
     MongooseModule.forRootAsync({
       useFactory: async () => {
         try {
-          const uri = "mongodb+srv://book:book@cluster0.owmauki.mongodb.net/";
+          const uri = "mongodb+srv://book:book@cluster0.s4n827j.mongodb.net/";
           await mongoose.connect(uri);
           logger.log("Database connection successfull");
           return { uri };
